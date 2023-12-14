@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from flask import Flask, render_template, flash, redirect, url_for, request, session, jsonify
 from database import DBhandler
 import hashlib
@@ -73,7 +75,6 @@ def view_list():
     # 데이터 길이를 넘어가지 않도록 끝 인덱스를 조정
     end_idx = min(end_idx, item_counts)
 
-<<<<<<< HEAD
     data = dict(list(data.items())[start_idx:end_idx])
 
     tot_count = len(data)
@@ -90,25 +91,14 @@ def view_list():
         "list.html",
         datas=data.items(),
         top_three_datas= top_three_items.items(),
-=======
-    return render_template(
-        "list.html",
-        datas=data.items(),
->>>>>>> c75ad334713ea94769c756af9057cedd5d251a1e
         row1=locals()['data_0'].items(),
         row2=locals()['data_1'].items(),
         limit=per_page,
         page=page,
-<<<<<<< HEAD
         page_count=int(math.ceil(item_counts / per_page)),  # 페이지 수 계산 수정
         total=item_counts,
         category=category
         )
-=======
-        page_count=int(math.ceil(item_counts/per_page)+1),
-        total=item_counts,
-        category=category)
->>>>>>> c75ad334713ea94769c756af9057cedd5d251a1e
 
 @application.route("/reg_items")
 def reg_item():
@@ -238,7 +228,6 @@ def view_review_detail(name):
     item = DB.get_item_byname(str(name))
     data = DB.get_review_byname(str(name))
     print("###data:", data)
-<<<<<<< HEAD
     return render_template("review_detail.html", name=name, data=data, item=item)
 
 @application.route("/view_mypage_like/<name>/")
@@ -276,9 +265,6 @@ def view_mypage_like(name):
         total=item_counts,
         name=name)
     
-=======
-    return render_template("review_detail.html", name=name, data=data)
->>>>>>> c75ad334713ea94769c756af9057cedd5d251a1e
 
 @application.route('/dynamicurl/<varible_name>/')
 def DynamicUrl(varible_name):

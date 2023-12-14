@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="{{ url_for('static', filename='main.js') }}" defer></script>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>    
+<<<<<<< HEAD
     <style>
         body {
             background-color: #FFEFD5;
@@ -50,10 +51,13 @@
             text-decoration: underline;
         }
     </style>
+=======
+>>>>>>> c75ad334713ea94769c756af9057cedd5d251a1e
 </head>
-<body>
-    <nav class="navbar">
+<body style="background-color: #FFE1EC;">
+    <nav class="navbar" style="background-color: #F44D99;">
         <div class="navbar__logo">
+<<<<<<< HEAD
             <a href="/list">CAMFLE</a>
         </div>
         <ul class="navbar__menu">
@@ -67,10 +71,34 @@
                 <li><a href="/login">Login</a></li>
             {% endif %}
         </ul>
+=======
+            <a href="/list" style="font-family: 'Pretendard'; font-size: 2.0rem">🙏 Giboo & Take </a>
+        </div>
+        <ul class="navbar__menu" style="align-items: center;">
+            <li><a href="/list" style="font-family: 'Pretendard'; margin-right: 30px;">제품 피드🪽</a></li>
+            <li><a href="/review" style="font-family: 'Pretendard'; margin-right: 30px;">리뷰 피드🪽</a></li>
+            <li><a href="/reg_items" style="font-family: 'Pretendard'; margin-right: 30px;">제품 등록🪽</a></li>
+            
+            {% if session['id'] %}
+            <li><a href="/logout" style="font-family: 'Pretendard';"><b>{{session['id']}}님 반갑습니다!</b> Logout🪽</a></li>
+            {% else %}
+            <li><a href="/login" style="font-family: 'Pretendard';">Login🪽</a></li>
+            {% endif %}
+        
+            
+        </ul>
+        
+>>>>>>> c75ad334713ea94769c756af9057cedd5d251a1e
     </nav>
     <section>
         {% block section %}
         {% endblock %}
     </section>
+<<<<<<< HEAD
 </body>
 </html>
+=======
+    </body>
+</html>
+
+>>>>>>> c75ad334713ea94769c756af9057cedd5d251a1e

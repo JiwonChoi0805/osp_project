@@ -12,10 +12,15 @@ class DBhandler:
             
     def insert_item(self, name, data, img_path):
         item_info ={
+<<<<<<< HEAD
             "price": data['price'],
             "okprice": data['okprice'],
             "seller": data['seller'],
             "addr": data['addr'],
+=======
+            "seller": data['seller'],"addr": data['addr'],
+            "email": data['email'],
+>>>>>>> c75ad334713ea94769c756af9057cedd5d251a1e
             "category": data['category'],
             "status": data['status'],
             "level": data['level'],
@@ -202,6 +207,7 @@ class DBhandler:
 
         return new_dict
             
+<<<<<<< HEAD
     def update_sold(self, uid, name, data):
         items = self.db.child("item").get()
         print("###########", name)
@@ -216,6 +222,9 @@ class DBhandler:
                 return target_value
         
     def reg_review(self, uid, data, img_path):
+=======
+    def reg_review(self, data, img_path):
+>>>>>>> c75ad334713ea94769c756af9057cedd5d251a1e
         review_info ={
             "title": data['title'],
             "rate": data['reviewStar'],
@@ -243,7 +252,10 @@ class DBhandler:
             if key_value == name:
                 target_value=res.val()
                 return target_value
+<<<<<<< HEAD
             
+=======
+>>>>>>> c75ad334713ea94769c756af9057cedd5d251a1e
     def get_heart_byname(self, uid, name):
         hearts = self.db.child("heart").child(uid).get()
         target_value=""
@@ -258,10 +270,13 @@ class DBhandler:
         return target_value
     
     
+<<<<<<< HEAD
     def update_heart(self, user_id, isHeart, item):
         heart_info ={
             "interested": isHeart
         }
         self.db.child("heart").child(user_id).child(item).set(heart_info)
         return True
+=======
+>>>>>>> c75ad334713ea94769c756af9057cedd5d251a1e
     
